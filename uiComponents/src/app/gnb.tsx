@@ -31,8 +31,6 @@ const ParentGnbItem = ({
       <ul className="subRoutes">
         {children.map((r) => {
           const route = routes[r];
-          console.log(r);
-          console.log(route);
           return (
             <GnbItem route={route} currentPath={currentPath} key={route.key} />
           );
@@ -41,6 +39,7 @@ const ParentGnbItem = ({
     </li>
   );
 };
+
 const ChildGnbItem = ({
   route: { name, link },
   currentPath,
