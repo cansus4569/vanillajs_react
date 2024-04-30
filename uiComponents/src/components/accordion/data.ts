@@ -1,3 +1,7 @@
+/**
+ * JSON-Generator - A tool to generate random JSON data.
+ * https://json-generator.com
+ */
 export const data = [
   {
     id: '6630e5cd9c714d6573b4f100',

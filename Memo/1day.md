@@ -94,6 +94,7 @@ export const metadata: Metadata = {
 - 폴더명에 디스트럭처링 문법이 들어갈지는 생각도 못했다..
 - 강의에서는 설명해주지 않아서... 그냥 page 및 경로에 대한 이야기를 간략하게만 해버려서,,
 - **_나중에 다시 확인해봐야겠다.._**
+  - [2day.md](./2day.md) 파일에 재 정리해두었다.
 
 ```ts
 const ItemPage = ({ params: { item } }: { params: { item: string[] } }) => {
