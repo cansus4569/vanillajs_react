@@ -21,6 +21,8 @@ const initiator = (wrapper: HTMLDivElement) => {
   wrapper.insertAdjacentElement('beforeend', divElem);
 };
 
-const Test2_Vanilla = () => <VanillaWrapper initiator={initiator} />;
+const Test2_Vanilla = () => (
+  <VanillaWrapper title="test2" initiator={initiator} />
+);
 
 export default Test2_Vanilla;

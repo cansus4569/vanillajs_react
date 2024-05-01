@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import cx from './cx';
 import { data } from './data';
 
@@ -15,43 +15,52 @@ const AccordionItem = ({
   current: boolean;
   toggle: () => void;
 }) => {
+  const descRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (descRef.current) {
+      descRef.current.addEventListener('beforematch', toggle);
+    }
+    return () => {
+      if (descRef.current)
+        descRef.current.removeEventListener('beforematch', toggle);
+    };
+  }, [toggle]);
+
   return (
     <li className={cx('item', 'item3', { current })} key={id}>
       <div className={cx('tab')} onClick={toggle}>
         {title}
       </div>
-      {/* current일 때 보여준다 */}
-      <div className={cx('description')}>{description}</div>{' '}
+      <div
+        className={cx('description')}
+        ref={descRef}
+        HIDDEN={current ? undefined : 'until-found'}
+      >
+        {description}
+      </div>
     </li>
   );
 };
 
-/**
- * Accordion3 는 css 방식으로 show/hide 를 구현한 아코디언이다.
- * .item2 클래스를 참조한다
- *  description은 평소에 display: none; 이다가 current일 때 display: block; 이 된다.
- * 숨겨진 텍스트도 검색(Ctrl+F)로 찾을 수 있다.
- */
-const Accordion3 = () => {
+const Accordion6 = () => {
   const [currentId, setCurrentId] = useState<string | null>(data[0].id);
-  const toggleItem = (id: string) => {
+  const toggleItem = (id: string) => () => {
     setCurrentId((prev) => (prev === id ? null : id));
   };
-  const new_toggleItem = (id: string) => () => {
-    setCurrentId((prev) => (prev === id ? null : id));
-  };
+
   return (
     <>
       <h3>
-        #3. React<sub>css animation (transition)</sub>
+        #6. React<sub>ctrl+F 검색 가능</sub>
       </h3>
       <ul className={cx('container')}>
-        {data.map((d) => (
+        {data.map((d, i) => (
           <AccordionItem
             {...d}
             key={d.id}
             current={currentId === d.id}
-            toggle={new_toggleItem(d.id)}
+            toggle={toggleItem(d.id)}
           />
         ))}
       </ul>
@@ -59,4 +68,4 @@ const Accordion3 = () => {
   );
 };
 
-export default Accordion3;
+export default Accordion6;
