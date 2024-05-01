@@ -33,9 +33,6 @@ const AccordionItem = ({
  */
 const Accordion2 = () => {
   const [currentId, setCurrentId] = useState<string | null>(data[0].id);
-  const toggleItem = (id: string) => {
-    setCurrentId((prev) => (prev === id ? null : id));
-  };
   const new_toggleItem = (id: string) => () => {
     setCurrentId((prev) => (prev === id ? null : id));
   };

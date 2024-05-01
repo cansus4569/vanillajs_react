@@ -1,21 +1,19 @@
 import { useEffect, useRef, useState } from 'react';
-import cx from './cx';
 import { data } from './data';
+import cx from './cx';
 
 const AccordionItem = ({
-  id,
   title,
   description,
-  current,
-  toggle,
 }: {
-  id: string;
   title: string;
   description: string;
-  current: boolean;
-  toggle: () => void;
 }) => {
+  const [current, setCurrent] = useState(false);
+
   const descRef = useRef<HTMLDivElement>(null);
+
+  const toggle = () => setCurrent((prev) => !prev);
 
   useEffect(() => {
     if (descRef.current) {
@@ -28,7 +26,7 @@ const AccordionItem = ({
   }, [toggle]);
 
   return (
-    <li className={cx('item', 'item3', { current })} key={id}>
+    <li className={cx('item', 'item3', { current })}>
       <div className={cx('tab')} onClick={toggle}>
         {title}
       </div>
@@ -43,31 +41,19 @@ const AccordionItem = ({
   );
 };
 
-const Accordion6 = () => {
-  const [currentId, setCurrentId] = useState<string | null>(data[0].id);
-  const toggleItem = (id: string) => () => {
-    setCurrentId((prev) => (prev === id ? null : id));
-  };
-
+const Accordion7 = () => {
   return (
     <>
       <h3>
-        #6. React<sub>ctrl+F 검색 가능</sub>
+        #7. React<sub>여러 개가 펼쳐지는 아코디언 + 검색가능</sub>
       </h3>
       <ul className={cx('container')}>
         {data.map((d, i) => (
-          <AccordionItem
-            {...d}
-            key={d.id}
-            current={currentId === d.id}
-            toggle={toggleItem(d.id)}
-          />
+          <AccordionItem {...d} key={d.id} />
         ))}
       </ul>
     </>
   );
 };
 
-export default Accordion6;
-
-/* 참고: https://hiddenest.dev/accessible-accordion */
+export default Accordion7;
