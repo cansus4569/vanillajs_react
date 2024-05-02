@@ -3,6 +3,7 @@ import TabMenus from './components/tabMenu';
 import Test1 from './components/test1';
 import Test2_React from './components/test2/react';
 import Test2_Vanilla from './components/test2/vanilla';
+import Tooltips from './components/tooltip';
 
 const routePaths = [
   '/',
@@ -126,8 +127,7 @@ export const routes: Record<ROUTE_PATH, ROUTE> = {
     key: '/tooltip',
     link: '/tooltip',
     name: '03. 툴팁',
-    // children: Tooltips,
-    children: null,
+    children: Tooltips,
   },
   '/textBox': {
     key: '/textBox',
