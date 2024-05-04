@@ -3,6 +3,7 @@ import TabMenus from './components/tabMenu';
 import Test1 from './components/test1';
 import Test2_React from './components/test2/react';
 import Test2_Vanilla from './components/test2/vanilla';
+import TextBoxes from './components/textBox';
 import Tooltips from './components/tooltip';
 
 const routePaths = [
@@ -115,7 +116,6 @@ export const routes: Record<ROUTE_PATH, ROUTE> = {
     link: '/accordion',
     name: '01. 아코디언',
     children: Accordions,
-    // children: null,
   },
   '/tabMenu': {
     key: '/tabMenu',
@@ -133,8 +133,7 @@ export const routes: Record<ROUTE_PATH, ROUTE> = {
     key: '/textBox',
     link: '/textBox',
     name: '04. 반응형 텍스트박스',
-    // children: TextBoxes,
-    children: null,
+    children: TextBoxes,
   },
   '/lineClamp': {
     key: '/lineClamp',
