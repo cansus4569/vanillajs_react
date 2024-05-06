@@ -1,4 +1,6 @@
 import Accordions from './components/accordion';
+import InfiniteScrollR from './components/infiniteScroll/react';
+import InfiniteScrollV from './components/infiniteScroll/vanilla';
 import LazyLoad1 from './components/lazyLoading/1_r';
 import LazyLoad2_V from './components/lazyLoading/2_v';
 import LazyLoad3 from './components/lazyLoading/3_r';
@@ -179,15 +181,13 @@ export const routes: Record<ROUTE_PATH, ROUTE> = {
     key: '/infiniteScroll/react',
     link: '/infiniteScroll/react',
     name: 'React#1 - IO',
-    // children: InfiniteScrollR,
-    children: null,
+    children: InfiniteScrollR,
   },
   '/infiniteScroll/vanilla': {
     key: '/infiniteScroll/vanilla',
     link: '/infiniteScroll/vanilla',
     name: 'Vanilla',
-    // children: InfiniteScrollV,
-    children: null,
+    children: InfiniteScrollV,
   },
   '/scrollBox': {
     key: '/scrollBox',

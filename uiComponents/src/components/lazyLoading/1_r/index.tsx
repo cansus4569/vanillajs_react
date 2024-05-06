@@ -59,11 +59,11 @@ export const LazyImage = ({
 /**
  * 상위단에서 loading="lazy"를 사용하면, IntersectionObserver를 사용하지 않아도 된다.
  */
-const lazyEnable = 'loading' in HTMLImageElement.prototype;
-const BuiltinImage = (props: any) => (
-  <img {...props} className={cx('lazy')} loading="lazy" />
-);
-const Image = lazyEnable ? BuiltinImage : LazyImage;
+// const lazyEnable = 'loading' in HTMLImageElement.prototype;
+// const BuiltinImage = (props: any) => (
+//   <img {...props} className={cx('lazy')} loading="lazy" />
+// );
+// const Image = lazyEnable ? BuiltinImage : LazyImage;
 
 const LazyLoad1 = () => {
   return (
