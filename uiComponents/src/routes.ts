@@ -1,4 +1,7 @@
 import Accordions from './components/accordion';
+import LazyLoad1 from './components/lazyLoading/1_r';
+import LazyLoad2_V from './components/lazyLoading/2_v';
+import LazyLoad3 from './components/lazyLoading/3_r';
 import LineClamps from './components/lineClamp';
 import TabMenus from './components/tabMenu';
 import Test1 from './components/test1';
@@ -152,22 +155,19 @@ export const routes: Record<ROUTE_PATH, ROUTE> = {
     key: '/lazyLoading/1_r',
     link: '/lazyLoading/1_r',
     name: 'React1',
-    // children: LazyLoad1,
-    children: null,
+    children: LazyLoad1,
   },
   '/lazyLoading/2_v': {
     key: '/lazyLoading/2_v',
     link: '/lazyLoading/2_v',
     name: 'Vanilla',
-    // children: LazyLoad2V,
-    children: null,
+    children: LazyLoad2_V,
   },
   '/lazyLoading/3_r': {
     key: '/lazyLoading/3_r',
     link: '/lazyLoading/3_r',
     name: 'React3',
-    // children: LazyLoad3,
-    children: null,
+    children: LazyLoad3,
   },
   '/infiniteScroll': {
     key: '/infiniteScroll',

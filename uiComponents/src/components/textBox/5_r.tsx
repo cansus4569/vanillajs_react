@@ -78,9 +78,7 @@ const TextBox5 = () => {
     <>
       <h3>
         #5. React
-        <sub>
-          상위 컴포넌트에서 값 접근 (useImperativeHandle) - by 강민혜(@himyne)
-        </sub>
+        <sub>상위 컴포넌트에서 값 접근 (useImperativeHandle)</sub>
       </h3>
       <TextBox minRow={4} maxRow={10} ref={ref} />
       <button type="button" onClick={handleClickSubmit}>
