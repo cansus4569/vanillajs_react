@@ -5,6 +5,7 @@ import LazyLoad1 from './components/lazyLoading/1_r';
 import LazyLoad2_V from './components/lazyLoading/2_v';
 import LazyLoad3 from './components/lazyLoading/3_r';
 import LineClamps from './components/lineClamp';
+import ScrollBox from './components/scrollBox';
 import TabMenus from './components/tabMenu';
 import Test1 from './components/test1';
 import Test2_React from './components/test2/react';
@@ -193,8 +194,7 @@ export const routes: Record<ROUTE_PATH, ROUTE> = {
     key: '/scrollBox',
     link: '/scrollBox',
     name: '08. 횡 스크롤 박스',
-    // children: ScrollBox,
-    children: null,
+    children: ScrollBox,
   },
   '/scrollSpy': {
     key: '/scrollSpy',
