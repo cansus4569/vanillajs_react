@@ -6,6 +6,9 @@ import LazyLoad2_V from './components/lazyLoading/2_v';
 import LazyLoad3 from './components/lazyLoading/3_r';
 import LineClamps from './components/lineClamp';
 import ScrollBox from './components/scrollBox';
+import ScrollSpy1 from './components/scrollSpy/1_r';
+import ScrollSpy2 from './components/scrollSpy/2_r';
+import ScrollSpy3V from './components/scrollSpy/3_v';
 import TabMenus from './components/tabMenu';
 import Test1 from './components/test1';
 import Test2_React from './components/test2/react';
@@ -211,22 +214,19 @@ export const routes: Record<ROUTE_PATH, ROUTE> = {
     key: '/scrollSpy/1_r',
     link: '/scrollSpy/1_r',
     name: 'R - scroll',
-    // children: ScrollSpy1,
-    children: null,
+    children: ScrollSpy1,
   },
   '/scrollSpy/2_r': {
     key: '/scrollSpy/2_r',
     link: '/scrollSpy/2_r',
     name: 'R - IO',
-    // children: ScrollSpy2,
-    children: null,
+    children: ScrollSpy2,
   },
   '/scrollSpy/3_v': {
     key: '/scrollSpy/3_v',
     link: '/scrollSpy/3_v',
     name: 'Vanilla',
-    // children: ScrollSpy3V,
-    children: null,
+    children: ScrollSpy3V,
   },
   '/scrollSpy/4_r': {
     key: '/scrollSpy/4_r',
